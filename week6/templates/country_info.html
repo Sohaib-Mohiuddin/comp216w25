@@ -7,10 +7,15 @@
 </head>
 <body>
     <h1>Country Information</h1>
-    <p><strong>Name:</strong> {{ country.name }}</p>
-    <p><strong>Capital:</strong> {{ country.capital }}</p>
-    <p><strong>Population:</strong> {{ country.population }}</p>
-    <p><strong>Region:</strong> {{ country.region }}</p>
-    <p><strong>Subregion:</strong> {{ country.subregion }}</p>
+    {% if country %}
+        <p><strong>Name:</strong> {{ country.name }}</p>
+        <p><strong>Capital:</strong> {{ country.capital }}</p>
+        <p><strong>Population:</strong> {{ country.population }}</p>
+        <p><strong>Region:</strong> {{ country.region }}</p>
+        <p><strong>Subregion:</strong> {{ country.subregion }}</p>
+        <img src="{{ country.flag }}" alt="{{ country.flagAlt }}">
+    {% else %}
+        <p><strong>Name:</strong>NO COUNTRY DATA</p>
+    {% endif %}
 </body>
 </html>

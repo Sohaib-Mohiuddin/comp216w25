@@ -15,13 +15,20 @@ app.secret_key = "supersecretkey"  # For flash messages (used in the email form 
 # Route 1: Output Hello World in JSON
 @app.route("/")
 def hello_world():
-    response = {"message": "Hello, World!", "status": "success"}
+    response = {
+        "message": "Hello, World!", 
+        "status": "success"
+    }
     return jsonify(response)
 
 # Route 2: Custom JSON output with input from the address
+@app.route("/greet")
 @app.route("/greet/<name>")
-def greet_user(name):
-    response = {"greeting": f"Hello, {name}!", "status": "success"}
+def greet_user(name = 'Bob Marley'):
+    response = {
+        "greeting": f"Hello, {name}!", 
+        "status": "success"
+    }
     return jsonify(response)
 
 # Route 3: Render an HTML page and pass information from the backend
@@ -31,7 +38,8 @@ def country_info():
         "name": "Canada",
         "capital": "Ottawa",
         "population": "38 million",
-        "region": "North America"
+        "region": "North America",
+        "subregion": "Americas"
     }
     return render_template("country_info.html", country=country_data)
 
@@ -48,7 +56,9 @@ def get_country_info(country_name):
             "capital": country_data.get("capital", ["N/A"])[0],
             "population": country_data.get("population", "N/A"),
             "region": country_data.get("region", "N/A"),
-            "subregion": country_data.get("subregion", "N/A")
+            "subregion": country_data.get("subregion", "N/A"),
+            "flag": country_data.get("flags", {}).get("png", "N/A"),
+            "flagAlt": country_data.get("flags", {}).get("alt", "N/A")
         }
         return render_template("country_info.html", country=processed_data)
     else:
@@ -66,25 +76,34 @@ def send_email():
         sender_email = os.getenv("EMAIL_ADDRESS")
         sender_password = os.getenv("EMAIL_PASSWORD")
         
-        if sender_email and sender_password:
-            try:
-                msg = MIMEMultipart()
-                msg["From"] = sender_email
-                msg["To"] = recipient
-                msg["Subject"] = subject
-                msg.attach(MIMEText(message, "plain"))
-                
-                with smtplib.SMTP("smtp.gmail.com", 587) as server:
-                    server.starttls()
-                    server.login(sender_email, sender_password)
-                    server.send_message(msg)
-
-                flash("Email sent successfully!", "success")
-            except Exception as e:
-                flash(f"Failed to send email: {str(e)}", "danger")
-        else:
+        if not sender_email or not sender_password:
             flash("Email service is not configured properly.", "danger")
-        
+            return redirect(url_for("send_email"))
+                
+        try:
+            # Prepare the email
+            msg = MIMEMultipart()
+            msg["From"] = sender_email
+            msg["To"] = recipient
+            msg["Subject"] = subject
+            msg.attach(MIMEText(message, "plain"))
+
+            # Send the email using SMTP
+            with smtplib.SMTP("smtp.gmail.com", 587) as server:
+                server.starttls()  # Secure the connection
+                server.login(sender_email, sender_password)
+                server.send_message(msg)
+
+            flash("Email sent successfully!", "success")
+            print('Email sent successfully!')
+
+        except smtplib.SMTPAuthenticationError:
+            flash("Authentication failed. Check your email and password.", "danger")
+            print('Authentication failed. Check your email and password.')
+        except smtplib.SMTPException as e:
+            flash(f"Failed to send email: {str(e)}", "danger")
+            print(f'Failed to send email: {str(e)}')
+
         return redirect(url_for("send_email"))
 
     return '''

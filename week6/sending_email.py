@@ -27,7 +27,9 @@ def send_email(recipient, subject, message):
 
         # Send the email using SMTP
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+            server.ehlo()
             server.starttls()  # Start a secure connection
+            server.ehlo()
             server.login(SENDER_EMAIL, SENDER_PASSWORD)
             server.send_message(msg)
         

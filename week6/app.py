@@ -24,7 +24,8 @@ def hello_world():
 # Route 2: Custom JSON output with input from the address
 @app.route("/greet")
 @app.route("/greet/<name>")
-def greet_user(name = 'Bob Marley'):
+@app.route("/greeting")
+def greet_user(name = 'Killua'):
     response = {
         "greeting": f"Hello, {name}!", 
         "status": "success"
@@ -52,9 +53,9 @@ def get_country_info(country_name):
     if response.status_code == 200:
         country_data = response.json()[0]
         processed_data = {
-            "name": country_data.get("name", {}).get("common", "N/A"),
+            "name": country_data.get("name", {}).get("common", "N/A"), # country_data['name']['common']
             "capital": country_data.get("capital", ["N/A"])[0],
-            "population": country_data.get("population", "N/A"),
+            "population": country_data.get("population", 0000),
             "region": country_data.get("region", "N/A"),
             "subregion": country_data.get("subregion", "N/A"),
             "flag": country_data.get("flags", {}).get("png", "N/A"),
@@ -78,6 +79,7 @@ def send_email():
         
         if not sender_email or not sender_password:
             flash("Email service is not configured properly.", "danger")
+            print("Email service is not configured properly.")
             return redirect(url_for("send_email"))
                 
         try:

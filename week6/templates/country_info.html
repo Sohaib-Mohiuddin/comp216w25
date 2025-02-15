@@ -8,14 +8,14 @@
 <body>
     <h1>Country Information</h1>
     {% if country %}
-        <p><strong>Name:</strong> {{ country.name }}</p>
+        <p><strong>Name:</strong> {{ country['name'] }}</p>
         <p><strong>Capital:</strong> {{ country.capital }}</p>
         <p><strong>Population:</strong> {{ country.population }}</p>
         <p><strong>Region:</strong> {{ country.region }}</p>
         <p><strong>Subregion:</strong> {{ country.subregion }}</p>
-        <img src="{{ country.flag }}" alt="{{ country.flagAlt }}">
+        <img src="{{ country.flag }}" alt="{{ country.flagAlt }}" style="border: 2px solid black;">
     {% else %}
-        <p><strong>Name:</strong>NO COUNTRY DATA</p>
+        <p><strong>NO COUNTRY DATA</strong></p>
     {% endif %}
 </body>
 </html>

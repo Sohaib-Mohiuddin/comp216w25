@@ -15,6 +15,8 @@
 
 - wk10a_tcp_client_ssl.py
 - wk10a_tcp_server_ssl.py
+- wk10b_tcp_client_ssl.py
+- wk10b_tcp_server_ssl.py
 
 ## Generating OpenSSL Certificate and Key (Week 10)
 

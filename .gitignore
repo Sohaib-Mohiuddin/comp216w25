@@ -1,2 +1,7 @@
 /comp216w23
-.env
+*.env
+*.crt
+*.key
+*.csr
+*.pem
+*.srl

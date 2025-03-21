@@ -18,8 +18,8 @@ secure_socket.connect(('localhost', 12345))
 
 # Create a payload to send
 payload = {
-    'name': 'Sohaib Mohiuddin',
-    'age': 55,
+    'name': 'Mark Blue',
+    'age': 65,
     'course_name': 'Networking for Software Developers'
 }
 

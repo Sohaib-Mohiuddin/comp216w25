@@ -7,9 +7,9 @@ BUFSIZ = 256
 if __name__ == '__main__':
     client_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     host = input(f'Enter hostname {HOST}:') or HOST
-    port = input(f'Enter port {PORT}:') or PORT
+    port = int(input(f'Enter port {PORT}:')) or PORT
 
-    sock_addr = (host, int(port))
+    sock_addr = (host, port)
     client_sock.connect(sock_addr)
 
     payload = 'GET TIME'

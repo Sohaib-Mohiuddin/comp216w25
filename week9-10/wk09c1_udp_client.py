@@ -12,7 +12,7 @@ PORT = 12345                      # port to listen at
 ADDRESS = (HOST, PORT)            # 
 
 client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-message = 'Hello UDP server from Client'
+message = 'Hello From Client 2'
 client.sendto(message.encode(), ADDRESS)
 data, addr = client.recvfrom( 1024 )
 print(f'From server: {data.decode("utf-8")}')

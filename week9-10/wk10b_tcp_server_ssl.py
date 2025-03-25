@@ -18,13 +18,13 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Configure logging
+# Configure logging %s %d %f %r
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Create secure SSL context
 context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
 # context.load_cert_chain(certfile=os.getenv('SSL_CERT'), keyfile=os.getenv('SSL_KEY'))
-context.load_cert_chain(certfile='randomcert.crt', keyfile='randomcert.key')
+context.load_cert_chain(certfile='randomkeygen.crt', keyfile='randomkeygen.key')
 
 # Create a TCP socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

@@ -35,7 +35,7 @@ try:
     secure_socket.connect(('localhost', 23456))
 
     # Create a payload to send
-    student = Student(name='Nicholas', age=65, course_name='Acting')
+    student = Student(name='Bob Marley Junior', age=12, course_name='Networking/Software Eng')
 
     # Serialize the payload
     data = pickle.dumps(student.to_dict())

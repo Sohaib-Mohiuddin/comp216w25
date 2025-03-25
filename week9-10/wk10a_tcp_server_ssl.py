@@ -47,8 +47,7 @@ while True:
         cursor = conn.cursor()
 
         # Assuming payload is a dictionary with keys 'name', 'age', and 'course_name'
-        cursor.execute("INSERT INTO comp216_demo (name, age, course_name) VALUES (%s, %s, %s)", 
-                       (payload['name'], payload['age'], payload['course_name']))
+        cursor.execute("INSERT INTO comp216_demo (name, age, course_name) VALUES (%s, %s, %s)", (payload['name'], payload['age'], payload['course_name']))
         conn.commit()
 
         cursor.close()

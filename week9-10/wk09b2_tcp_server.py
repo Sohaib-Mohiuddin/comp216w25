@@ -28,7 +28,7 @@ while True:
         data = client.recv(BUFSIZ)
         if not data or data.decode('utf-8') == 'END':
             break
-        print(f'Received from client: {data.decode("utf- 8")}')
+        print(f'Received from client: {data.decode("utf-8")}')
         print(f'Sending the server time to client: {ctime()}')
         try:
             client.send(bytes(ctime(), 'utf-8'))

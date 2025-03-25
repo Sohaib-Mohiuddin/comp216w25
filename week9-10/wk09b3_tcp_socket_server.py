@@ -16,13 +16,13 @@ if __name__ == '__main__':
     while True:
         print('Server waiting for connection...')
         client, addr = server.accept()
-        print('Client connected from: {addr}')
+        print(f'Client connected from: { addr }')
 
         while True:
             data = client.recv(BUFSIZ)
             if not data or data.decode('utf-8') == 'END':
                 break
-            print(f'Received from client: {data.decode("utf- 8")}')
+            print(f'Received from client: {data.decode("utf-8")}')
             print(f'Sending the server time to client: {ctime()}')
             try:
                 client.send(bytes(ctime(), 'utf-8'))

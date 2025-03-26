@@ -20,6 +20,8 @@
 
 ## Generating OpenSSL Certificate and Key (Week 10)
 
+Note: If OpenSSL is not installed, you must go to the [OpenSSL website](https://www.openssl.org/) and download the appropriate version for your operating system. OpenSSL is available to download for Windows and is already installed on most Linux distributions.
+
 ```bash
 openssl req -new -x509 -days 365 -nodes -out server.crt -keyout server.key
 ```

@@ -87,6 +87,49 @@ pip uninstall paho-mqtt
 
 ---
 
+# Securing MQTT with Password-Based Authentication
+
+This guide provides instructions on setting up password-based authentication for an MQTT broker using Mosquitto. The setup includes creating a password file, configuring the broker, and testing the authentication.
+
+1. **Create a Password File**
+```bash
+sudo nano /etc/mosquitto/passwd
+```
+
+Change permissions:
+```bash
+sudo chmod 0700 /etc/mosquitto/passwd
+```
+
+2. **Add Usernames and Passwords**
+```ini
+username1:password1
+username2:password2
+```
+
+3. **Generate Password Hashes**
+```bash
+sudo mosquitto_passwd -U /etc/mosquitto/passwd
+```
+
+4. **Edit Mosquitto Configuration**
+```bash
+sudo nano /etc/mosquitto/conf.d/default.conf
+```
+
+Add the following lines:
+```ini
+allow_anonymous false
+password_file /etc/mosquitto/passwd
+```
+
+5. **Restart Mosquitto**
+```bash
+sudo systemctl restart mosquitto
+```
+
+---
+
 # Secure MQTT Setup with SSL/TLS
 
 This guide provides instructions on setting up SSL/TLS for an MQTT broker using OpenSSL. The setup includes generating certificates and keys and configuring the broker and clients for secure communication.

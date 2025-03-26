@@ -3,13 +3,11 @@
 ## Introduction
 This guide provides step-by-step instructions for installing the **Paho-MQTT** Python library on **Ubuntu, Windows, and macOS**.
 
----
 
 ## Prerequisites
 - Ensure **Python 3** is installed on your system.
 - It is recommended to create a **virtual environment** before installing Paho-MQTT.
 
----
 
 ## Installation Instructions
 
@@ -31,7 +29,6 @@ pip install paho-mqtt
 python3 -c "import paho.mqtt.client as mqtt; print('Paho-MQTT installed successfully!')"
 ```
 
----
 
 ### Windows
 #### 1. Install Python:
@@ -48,7 +45,6 @@ pip install paho-mqtt
 python -c "import paho.mqtt.client as mqtt; print('Paho-MQTT installed successfully!')"
 ```
 
----
 
 ### macOS
 #### 1. Install Homebrew (if not installed):
@@ -68,7 +64,6 @@ pip3 install paho-mqtt
 python3 -c "import paho.mqtt.client as mqtt; print('Paho-MQTT installed successfully!')"
 ```
 
----
 
 ## Creating a Virtual Environment (Optional but Recommended)
 Before installing Paho-MQTT, you can create a virtual environment:
@@ -78,7 +73,6 @@ source mqtt_env/bin/activate  # On Windows use: mqtt_env\Scripts\activate
 pip install paho-mqtt
 ```
 
----
 
 ## Uninstalling Paho-MQTT
 To remove Paho-MQTT, use:
@@ -86,7 +80,6 @@ To remove Paho-MQTT, use:
 pip uninstall paho-mqtt
 ```
 
----
 
 ## Additional Resources
 - [Paho-MQTT Documentation](https://www.eclipse.org/paho/)

@@ -10,6 +10,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# SETUP ON WINDOWS MACHINE. UBUNTU NOT SUPPORTING GUI
+
 # MQTT Broker Details
 BROKER = "localhost"
 PORT = 1883

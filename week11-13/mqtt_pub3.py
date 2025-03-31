@@ -59,7 +59,7 @@ def publish_sensor_data():
             payload = json.dumps(sensor_data)
             client.publish(TOPIC, payload, qos=0)
             logger.info(f"Published: {payload}")
-            time.sleep(2)
+            time.sleep(1)
     except KeyboardInterrupt:
         logger.info("Publisher stopped")
     finally:

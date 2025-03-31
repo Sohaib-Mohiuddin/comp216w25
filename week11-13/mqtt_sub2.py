@@ -1,5 +1,9 @@
 import paho.mqtt.client as paho
 import logging
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")

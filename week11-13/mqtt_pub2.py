@@ -55,7 +55,7 @@ def publish_temperature():
             message = f"Temperature: {temperature} °C"
             result = client.publish(TOPIC, message, qos=0)
             logger.info(f"Published: {message}")
-            time.sleep(5)  # Delay before sending next message
+            time.sleep(1)  # Delay before sending next message
     except KeyboardInterrupt:
         logger.info("Publisher stopped by user.")
     finally:

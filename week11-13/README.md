@@ -74,10 +74,30 @@ pip install paho-mqtt
 ```
 
 
-## Uninstalling Paho-MQTT
-To remove Paho-MQTT, use:
+## .env File Setup
+
+### 1. Create a `.env` file in your project directory:
 ```bash
-pip uninstall paho-mqtt
+touch .env
+```
+
+### 2. Add the following lines to the `.env` file:
+```ini
+USERNAME=your_username
+PASSWORD=your_password
+OWM_API_KEY=your_openweathermap_api_key
+```
+
+### 3. Load the environment variables in your Python script:
+```python
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+username = os.getenv('USERNAME')
+password = os.getenv('PASSWORD')
+owm_api_key = os.getenv('OWM_API_KEY')
 ```
 
 
@@ -96,7 +116,7 @@ This guide provides instructions on setting up password-based authentication for
 sudo nano /etc/mosquitto/passwd
 ```
 
-Change permissions:
+Change permissions (OPTIONAL):
 ```bash
 sudo chmod 0700 /etc/mosquitto/passwd
 ```
@@ -156,7 +176,7 @@ sudo apt install openssl mosquitto mosquitto-clients -y
 ```
 
 #### Windows:
-Download and install OpenSSL from [OpenSSL for Windows](https://slproweb.com/products/Win32OpenSSL.html) and Mosquitto from [Eclipse Mosquitto](https://mosquitto.org/download/).
+Download and install OpenSSL from [OpenSSL for Windows](https://openssl-library.org/source/) and Mosquitto from [Eclipse Mosquitto](https://mosquitto.org/download/).
 
 #### macOS:
 ```bash
@@ -188,7 +208,7 @@ openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out c
 ## Configuring Mosquitto for SSL
 Edit the Mosquitto configuration file (`mosquitto.conf`):
 ```ini
-listener 8883
+listener 1883
 cafile /path/to/ca.crt
 certfile /path/to/server.crt
 keyfile /path/to/server.key

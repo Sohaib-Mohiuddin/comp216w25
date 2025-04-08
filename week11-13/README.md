@@ -118,7 +118,8 @@ sudo nano /etc/mosquitto/passwd
 
 Change permissions (OPTIONAL):
 ```bash
-sudo chmod 0700 /etc/mosquitto/passwd
+sudo chmod 644 /etc/mosquitto/passwd
+# sudo chown mosquitto:mosquitto /etc/mosquitto/passwd (optional / additional setup needed if used)
 ```
 
 2. **Add Usernames and Passwords**

@@ -2,8 +2,10 @@
 x = 200
 
 def hello(prof='Sohaib', age=0):
+    # If statement to check if the age is less than 20
     if (age < 20):
         return f'You are young { prof }'
+    # If statement to check if the age is less than 40
     elif (age > 40):
         return f'Damn you are old { prof }'
     else:

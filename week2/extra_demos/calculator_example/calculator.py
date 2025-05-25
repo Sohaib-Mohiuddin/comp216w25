@@ -33,7 +33,7 @@ class Calculator:
         """
         result = 1
         for arg in args:
-            result *= arg
+            result *= arg # result = result * arg
         return result
 
     def divide(self, *args):

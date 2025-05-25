@@ -23,6 +23,6 @@ squared_values = [square(x) for x in range(10)]
 print(f"Squared Values: { squared_values }")
 
 # Example with nested loops
-# matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-# flattened = [num for row in matrix for num in row]
-# print(f"Flattened Matrix: { flattened }")
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened = [num for row in matrix for num in row]
+print(f"Flattened Matrix: { flattened }")

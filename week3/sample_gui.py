@@ -32,7 +32,7 @@ city_entry.grid(row=2, column=1, padx=10, pady=10)
 
 # Add a submit button
 submit_button = tk.Button(root, text="Submit", command=submit_form)
-submit_button.grid(row=3, column=1, pady=20)
+submit_button.grid(row=3, column=1, columnspan=2, pady=20)
 
 # Run the application
 root.mainloop()

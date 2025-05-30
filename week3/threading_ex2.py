@@ -1,5 +1,4 @@
-import threading
-import time
+import threading, time
 
 # Shared resources
 log_lock = threading.Lock()

@@ -27,7 +27,7 @@ def hello_world():
 @app.route("/greeting")
 def greet_user(name = 'Killua'):
     response = {
-        "greeting": f"Hello, {name}!", 
+        "greeting": f"Hello, {name.title()}!", 
         "status": "success"
     }
     return jsonify(response)

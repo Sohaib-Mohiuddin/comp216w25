@@ -8,8 +8,7 @@ Might contain advanced coding
 '''
 
 import urllib
-from flask import Flask, url_for
-from flask import request
+from flask import Flask, url_for, request
 
 users = {
     'ilia': {
@@ -153,7 +152,7 @@ def show_blog(postID):
     return f'Blog Number: {postID}'
 
 if __name__ == '__main__':
-	app.run(debug=True)      #app.run(host, port, debug, options)
+	app.run(debug=True, port=5444)      #app.run(host, port, debug, options)
 
 
 #curl --request GET --url http://127.0.0.1:5000/

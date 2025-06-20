@@ -37,7 +37,7 @@ def greet_user(name = 'Killua'):
 def country_info():
     country_data = {
         "name": "Canada",
-        "capital": "Ottawa",
+        "capital": "Ottawaaaaa",
         "population": "38 million",
         "region": "North America",
         "subregion": "Americas"

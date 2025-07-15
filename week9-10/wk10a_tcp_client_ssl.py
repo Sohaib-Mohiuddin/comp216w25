@@ -18,9 +18,9 @@ secure_socket.connect(('localhost', 12345))
 
 # Create a payload to send
 payload = {
-    'name': 'Mark Red',
-    'age': 79,
-    'course_name': 'Arts'
+    'name': 'Mark Blue White',
+    'age': 105,
+    'course_name': 'Should be dead'
 }
 
 # Serialize the payload

@@ -8,10 +8,12 @@ Demonstrate how to create a tcp socket that listens.
 import socket
 
 HOST = 'localhost'                # host name
-PORT = 3457                      # port to listen at
+PORT = 12345                      # port to listen at
+
+ADDR = (HOST, PORT)
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((HOST, PORT))         # 
+server.bind(ADDR)         # 
 server.listen(5)                  #
 server.setsockopt( socket.SOL_SOCKET, socket.SO_REUSEADDR, 1 )
 

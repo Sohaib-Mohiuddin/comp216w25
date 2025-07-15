@@ -55,7 +55,7 @@ print(f'Socket Connected to {host} on port: {port}')
 # #communicate with the host
 BUFSIZ = 4096
 # while True:
-request = 'GET / HTTP/1.0\r\n\r\n'
+request = 'Bla bla you suck give me the time!'
 s.send(request.encode('utf-8'))
 data = s.recv(BUFSIZ)
 # if not data:

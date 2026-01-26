@@ -15,6 +15,6 @@ if __name__ == "__main__":
     # The traceback is useful for debugging and understanding the flow of the program.
     try:
         for some_name in range(6):
-            print(Person(some_list[some_name]))
+            print(Person(some_list[some_name], 20))
     except Exception as e:
-        print(f'Some exception occurred: { e.with_traceback() }')
+        print(f'Some exception occurred: { e }')

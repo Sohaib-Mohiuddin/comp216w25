@@ -21,5 +21,5 @@ if __name__=="__main__":
     
     print('*' * 30)
     
-    print(j, j.can_walk())
+    print(i, i.can_walk())
     

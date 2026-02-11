@@ -9,7 +9,7 @@ the resulting response object
 import requests
 
 # URL = 'http://127.0.0.1:5000/'                   #first try
-URL = 'http://127.0.0.1:5444/profs'              #then try this
+URL = 'http://127.0.0.1:5444/test0'              #then try this
 #                                                Now try with different clients 
 #                                                e.g. different browsers
 #                                                curl 'http://127.0.0.1:5000/test0'

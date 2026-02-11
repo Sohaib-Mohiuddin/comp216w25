@@ -1,4 +1,5 @@
-/comp216w23
+comp216w23/
+.venv/
 *.env
 *.crt
 *.key

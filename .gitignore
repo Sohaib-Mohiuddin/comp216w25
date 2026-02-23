@@ -1,5 +1,6 @@
 comp216w23/
 .venv/
+test/
 *.env
 *.crt
 *.key
